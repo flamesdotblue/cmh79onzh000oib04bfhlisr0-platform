@@ -1,41 +1,62 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from 'react'
+import { motion } from 'framer-motion'
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section id="top" className="pt-28 md:pt-32 pb-12 md:pb-20 relative overflow-hidden">
-      <div className="absolute -top-24 -right-24 w-80 h-80 bg-green-200/50 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-200/50 rounded-full blur-3xl" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-green-700 bg-green-100 rounded-full px-3 py-1">AI-powered Marketplace</span>
-          <h1 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight text-gray-900">
+    <section className="relative pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-16">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-green-50 via-white to-white" />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className=""
+        >
+          <span className="inline-block text-xs font-semibold tracking-wider uppercase text-green-700 bg-green-100 rounded-full px-3 py-1 mb-4">
+            India's first AI-powered agri marketplace
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">
             Empowering Farmers, Connecting Markets
           </h1>
-          <p className="mt-4 text-base md:text-lg text-gray-700 max-w-2xl">
-            India's first AI-powered agricultural marketplace eliminating middlemen. Fair prices, instant payments, and smart logistics for a resilient supply chain.
+          <p className="mt-4 text-lg text-gray-600 max-w-xl">
+            India's first AI-powered agricultural marketplace eliminating middlemen. Fair prices, instant payments, and efficient logistics for every harvest.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="#cta" className="px-6 py-3 rounded-full bg-green-600 text-white font-semibold shadow hover:bg-green-700 transition">Join as Farmer</a>
-            <a href="#cta" className="px-6 py-3 rounded-full border border-green-600 text-green-700 font-semibold hover:bg-green-50 transition">Join as Buyer</a>
+            <a href="#signup" className="inline-flex items-center justify-center rounded-lg bg-green-600 text-white px-5 py-3 font-semibold shadow hover:bg-green-700">
+              Join as Farmer
+            </a>
+            <a href="#signup" className="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white text-gray-800 px-5 py-3 font-semibold hover:bg-gray-50">
+              Join as Buyer
+            </a>
+          </div>
+          <div className="mt-6 flex items-center gap-4 text-sm text-gray-500">
+            <div className="h-8 w-8 rounded-full bg-white shadow ring-1 ring-black/5 overflow-hidden">
+              <img alt="farmer" className="h-full w-full object-cover" src="https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=300&auto=format&fit=crop" />
+            </div>
+            <p>Join 10,000+ farmers already registered</p>
           </div>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="relative">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/40 bg-white/60 backdrop-blur">
-            <img 
-              src="https://images.unsplash.com/photo-1592982537447-7440770cbfcf?q=80&w=1600&auto=format&fit=crop"
-              alt="Farmer using smartphone"
-              className="w-full h-[320px] md:h-[420px] object-cover"
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="relative"
+        >
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/40 bg-white/40 backdrop-blur">
+            <img
+              src="https://images.unsplash.com/photo-1543257580-7269da773bf0?q=80&w=1280&auto=format&fit=crop"
+              alt="Farmer using smartphone in field"
+              className="w-full h-[360px] sm:h-[420px] object-cover"
               loading="eager"
             />
-            <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur rounded-xl p-4 shadow">
-              <p className="text-sm text-gray-700"><span className="font-semibold">Real-time Pricing</span> and <span className="font-semibold">Instant Payments</span> powered by AI</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 text-white drop-shadow">
+              <p className="text-sm">AI-driven pricing and instant payments at your fingertips</p>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  );
-};
-
-export default Hero;
+  )
+}
